@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Switching : Configuration des VLANs</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Switching : Configuration des VLANs</h1><br/><strong>PLAN</strong><br />• Administration des VLANs<br />• Configuration des ports<br />• Affectation d&#39;un port access à un VLAN<br />• Filtrage des VLANs sur port trunk<br /><br /><strong>Administration des VLANs</strong><br />• pour passer en mode de configuration d&#39;un VLAN<br />(config)# vlan 2<br />(config-vlan)#<br /><br />   ◇  il est également possible de configurer plusieurs VLANs à la fois<br />(config)# vlan 2,3,4<br />(config-vlan)#<br /><br />• si la VLAN n&#39;existe pas encore, elle est automatiquement créée<br />• pour la supprimer, utiliser la commande no<br />(config)# no vlan 2<br /><br />• il est possible de nommer un vlan<br />(config-vlan)# name nomrouteur<br /><br /><strong>Configuration des ports</strong><br />• 2 modes<br />   ◇ acces (par défaut)<br />      ▪ connexion terminale d&#39;un périphérique<br />      ▪ n&#39;appartient qu&#39;à un seul VLAN<br />   ◇ trunk<br />      ▪ connexion faisant transiter les trames de plusieurs VLAN<br />      ▪ particulièrement utile pour les connexions entre switch<br /><br />• Mise en oeuvre<br />   ◇ mode access<br />(config-if)#switchport mode access<br />   ◇ mode trunk<br />(config-if)#switchpport mode trunk<br />   ◇ si plusieurs protocoles d&#39;encapsulation sont disponible (isl ou dot1q), il peut-être nécessaire de spécifier celui à utiliser au préalable<br />(config-if)#switchport trunk encapsulation dot1q<br /><br /><strong>Affectation d&#39;un port access à un VLAN</strong><br />• en mode de configuration de l&#39;interface<br />   ◇ fonctionne aussi avec un groupe d&#39;interface (if-range)<br />(config-if)#switchport access vlan 2<br /><br /><strong>Filtrage des VLANs sur port trunk</strong><br />• Autoriser des VLANs<br />(config-if)#switchport trunk allowed vlan add 2,3,10<br />• Interdire un VLAN<br />(config-if)#switchport trunk allowed vlan remove 3<br />• Annuler le filtrage<br />(config-if)#no switchport trunk allowed vlan<br /><br /><strong>Ce qu&#39;on a couvert</strong><br />• Configuration des VLANs de niveau 1 sur un switch cisco</div>
+</body>
+</html>
