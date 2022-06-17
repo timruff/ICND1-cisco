@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Services IP : NTP</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Services IP : NTP</h1><br/><strong>Plan<br /></strong>• Nrtwork Time Protocol<br />• Activation du client NTP<br />• Vérification<br /><br /><strong>Network Time Protocol</strong><br />• synchronisation des horloges sur réseau<br /><br />• présenté pour la première fois en septembre 1985<br />   ◇ RFC 958<br /><br />• dernière version : NTPv4<br />   ◇ RFC 5905 - Juin 2010<br /><br />• indispensable pour uen bonne lecture des logs<br />   ◇ et donc un troubleshooting simple<br /><br /><strong>Activation du client NTP</strong><br />• nécessite de spécifier un serveur NTP<br />   ◇ ainsi qu&#39;une version du protocale<br />(config)# ntp server 172.16.2.2 version 4<br /><br /><strong>Vérification</strong><br />• Vérifier si l&#39;horloge est synchronisée<br /># show ntp status<br /><br />• Vérifier l&#39;association à un serveur de temps<br /># show ntp associations<br /><br /><strong>Ce qu&#39;on a couvert</strong><br />• Configuration d&#39;un routeur IOS en tant que client NTP<br />   ◇ et vérification<br />      ▪ de l&#39;état de la synchronisation<br />      ▪ de la configuration actuelle<br /><br /><br /><br /></div>
+</body>
+</html>
